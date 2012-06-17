@@ -1,0 +1,7 @@
+proc_string_id: original
+pipelinesteps: 
+- pipes.steps.uppercase,UPPERCASE
+- pipes.steps.duplicate,DUPLICATE
+- pipes.steps.adddate,DATE
+- pipes.steps.length,LENGTH
+- pipes.steps.mirror,MIRRORING
