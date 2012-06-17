@@ -13,4 +13,4 @@ http://glowing-rain-5109.herokuapp.com/
 The above URL will mimic the case when ```Hello Python``` is passed to the pipeline.
 
 Custom Strings can be passed to the pipelines by the following way:
-```http://glowing-rain-5109.herokuapp.com/<CustomString>```
+http://glowing-rain-5109.herokuapp.com/ +```<CustomString>```
