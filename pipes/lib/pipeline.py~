@@ -34,6 +34,7 @@ class Pipeline(object):
         self.configdict = {}
         self.procstring = None
         h = hashlib.new('ripemd160')
+        count = -1
         try:
 	  filehandler = open (self.configfile,'r')
 	  yamlread = yaml.load(filehandler)
@@ -50,6 +51,7 @@ class Pipeline(object):
             try:
                 step_object = self.create_object(step_fullname, 'Step')
                 self.pipeline.append(getattr(step_object,'run'))
+                count = count+1
                 h.update(str(getattr(step_object,'run')))
                 self.configdict[h.hexdigest()]=step_displayname
             except:
@@ -57,9 +59,11 @@ class Pipeline(object):
                 logging.exception('Error loading pipeline component')
     def run(self, input):
         h = hashlib.new('ripemd160')
+        count = -1
         #print self.configdict
         for component in self.pipeline:
             try:
+	        count = count+1
 	        #print "After "+str(component)
 	        h.update(str(component))
 	      ## Add the string on which the pipeline has to executed

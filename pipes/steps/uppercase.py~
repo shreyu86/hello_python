@@ -5,7 +5,7 @@ class Step(object):
         logging.info('Converting to uppercase')
         stringOriginal  = input[procstringkey]
         if stringOriginal is not None:
-	  input[stepkey] = stringOriginal.upper()
+	  input[stepkey] = input[procstringkey].upper()
 	else:
 	  input[stepkey] = input[procstringkey]
         

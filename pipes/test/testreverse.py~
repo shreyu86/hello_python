@@ -1,0 +1,14 @@
+#!usr/bin/python
+import sys
+import nose
+sys.path.append("/home/shreyas/shopply_assignment/hello_python/pipes/")
+from steps.mirror import Step
+procstringkey = 'original'
+stepkey = "REVERSE"
+def testmirror():
+  input = {}
+  inputstring = " hello "
+  input[procstringkey]=inputstring
+  mirrorstep = Step()
+  mirrorstep.run(input,procstringkey,stepkey)
+  assert input[stepkey]==inputstring[::-1]

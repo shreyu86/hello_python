@@ -12,7 +12,7 @@ def main():
   input = {}
   logging.basicConfig(level='INFO')
   input['original'] = args.inputstring
-  pipeline = Pipeline(args.configfile)
+  pipeline = Pipeline(parser.configfile)
   logging.info('Input is = {0}'.format(input))
   pipeline.run(input)
   logging.info('Input is now = {0}'.format(input))
