@@ -37,10 +37,10 @@ class Pipeline(object):
         try:
 	  filehandler = open (self.configfile,'r')
 	  yamlread = yaml.load(filehandler)
+	  self.STEPS = yamlread['pipelinesteps']
+	  self.procstring = yamlread['proc_string_id']
 	except:
 	  logging.exception("Cannot load the config file")
-        self.STEPS = yamlread['pipelinesteps']
-        self.procstring = yamlread['proc_string_id']
         logging.info('Config file loaded')
         for step in self.STEPS:
 	    splitstep_id = step.split(',')
