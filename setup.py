@@ -9,5 +9,5 @@ setup(name='PipeProject',
       url = 'https://github.com/shreyu86/hello_python/',
       packages=['pipes', 'pipes.lib', 'pipes.steps','pipes.test'],
       package_data = { '' : ['*.yaml'] },
-      provides = ['yaml','datetime']
+      provides = ['pyYAML','datetime','hashlib'],
       )
