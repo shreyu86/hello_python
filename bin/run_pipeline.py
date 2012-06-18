@@ -1,7 +1,5 @@
 #!/usr/bin/python
-import sys
-sys.path.append("/home/shreyas/shopply_assignment/hello_python/pipes/")
-from lib.pipeline import Pipeline
+from pipes.lib.pipeline import Pipeline
 import logging
 import argparse
 parser = argparse.ArgumentParser(description='Proccess String via a pipeline')
@@ -16,8 +14,6 @@ def main():
   logging.info('Input is = {0}'.format(input))
   pipeline.run(input)
   logging.info('Input is now = {0}'.format(input))
-  
 if __name__=="__main__":
   main()
     
-    #print input
