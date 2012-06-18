@@ -4,5 +4,5 @@ Jinja2==2.6
 Werkzeug==0.8.3
 distribute==0.6.19
 hashlib==20081119
-pyYAML==3.10
+PyYAML==3.10
 -e git+https://github.com/shreyu86/hello_python#egg=PipeProject
