@@ -1,7 +1,7 @@
 #!usr/bin/python
 from nose.tools import eq_
 from pipes.steps.uppercase import Step
-class testUpperCase:
+class testUpperCaseStep:
   procstringkey = 'original'
   stepkey = "UPPERCASE"
   def testuppercase(self):

@@ -1,11 +1,13 @@
 #!usr/bin/python
+from nose.tools import eq_
 from pipes.steps.length import Step
-procstringkey = 'original'
-stepkey = "LENGTH"
-def testlength():
-  input = {}
-  inputstring = "hello"
-  input[procstringkey]=inputstring
-  lengthstep= Step()
-  lengthstep.run(input,procstringkey,stepkey)
-  assert input[stepkey]==len(inputstring)
+class testLengthStep:
+  procstringkey = 'original'
+  stepkey = "LENGTH"
+  def testlength(self):
+    input = {}
+    inputstring = "hello"
+    input[self.procstringkey]=inputstring
+    lengthstep= Step()
+    lengthstep.run(input,self.procstringkey,self.stepkey)
+    eq_(input[self.stepkey],len(inputstring))
