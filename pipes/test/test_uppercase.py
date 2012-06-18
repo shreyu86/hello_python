@@ -1,11 +1,13 @@
 #!usr/bin/python
+from nose.tools import eq_
 from pipes.steps.uppercase import Step
-procstringkey = 'original'
-stepkey = "UPPERCASE"
-def testuppercase():
-  input = {}
-  inputstring = "hello"
-  input[procstringkey]=inputstring
-  uppercasestep = Step()
-  uppercasestep.run(input,procstringkey,stepkey)
-  assert input[stepkey]==inputstring.upper()
+class testUpperCase:
+  procstringkey = 'original'
+  stepkey = "UPPERCASE"
+  def testuppercase(self):
+    input = {}
+    inputstring = "hello"
+    input[self.procstringkey]=inputstring
+    uppercasestep = Step()
+    uppercasestep.run(input,self.procstringkey,self.stepkey)
+    eq_(input[self.stepkey],inputstring.upper())
