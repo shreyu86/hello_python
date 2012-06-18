@@ -1,11 +1,13 @@
 #!usr/bin/python
+from nose.tools import eq_
 from pipes.steps.mirror import Step
-procstringkey = 'original'
-stepkey = "MIRRORING"
-def testmirror():
-  input = {}
-  inputstring = " hello "
-  input[procstringkey]=inputstring
-  mirrorstep = Step()
-  mirrorstep.run(input,procstringkey,stepkey)
-  assert input[stepkey]==inputstring[::-1]
+class testMirrorStep:
+  procstringkey = 'original'
+  stepkey = "MIRRORING"
+  def testmirror(self):
+    input = {}
+    inputstring = " hello "
+    input[self.procstringkey]=inputstring
+    mirrorstep = Step()
+    mirrorstep.run(input,self.procstringkey,self.stepkey)
+    eq_(input[self.stepkey],inputstring[::-1])
