@@ -9,6 +9,5 @@ setup(name='PipeProject',
       url='https://github.com/shreyu86/hello_python/',
       packages=['pipes', 'pipes.lib', 'pipes.steps', 'pipes.test'],
       package_data={'': ['*.yaml']},
-      scripts=['./bin/run_pipeline.py'],
       install_requires=['PyYAML', 'datetime', 'hashlib'],
       )
