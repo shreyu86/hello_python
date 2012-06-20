@@ -4,13 +4,13 @@ import logging
 import datetime
 import yaml
 import hashlib
-### Edited this step to include an config file in YAML
-### which contains the string ID to be acted on and which pipelines to execute.
+# Edited this step to include an config file in YAML
+# which contains the string ID to be acted on and which pipelines to execute.
 
 
 class Pipeline(object):
 
-    #STEPS = ['steps.uppercase','steps.duplicate','steps.adddate']
+    # STEPS = ['steps.uppercase','steps.duplicate','steps.adddate']
 
     def __init__(self, filename):
         self.load_components(filename)
@@ -33,6 +33,7 @@ class Pipeline(object):
         self.configdict = {}
         self.procstring = None
         h = hashlib.new('ripemd160')
+
         try:
             filehandler = open(self.configfile, 'r')
             yamlread = yaml.load(filehandler)
@@ -58,12 +59,10 @@ class Pipeline(object):
 
     def run(self, input):
         h = hashlib.new('ripemd160')
-        #print self.configdict
         for component in self.pipeline:
             try:
-                #print "After "+str(component)
                 h.update(str(component))
-                ## Add the string on which the pipeline has to executed
+                # Add the string on which the pipeline has to executed
                 currentstep = self.configdict[h.hexdigest()]
                 component(input, self.procstring, currentstep)
             except:
