@@ -14,3 +14,4 @@ The above URL will mimic the case when ```Hello Python``` is passed to the pipel
 
 Custom Strings can be passed to the pipelines by the following way:
 http://glowing-rain-5109.herokuapp.com/ +```<CustomString>```
+[![Build Status](https://secure.travis-ci.org/shreyu86/hello_python.png?branch=master)](http://travis-ci.org/shreyu86/hello_python)
